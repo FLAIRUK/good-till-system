@@ -44,9 +44,6 @@
         "preferred-install": "dist"
     },
     "extra": {
-        "branch-alias": {
-            "dev-master": "master"
-        },
         "laravel": {
             "providers": [
                 "FLAIR\\GoodTillSystem\\GoodTillSystemServiceProvider"
