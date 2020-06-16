@@ -48,7 +48,7 @@ jobs:
           paths:
             - node_modules
 
-      # prepare the database
+      # run the phpunit test
       - run: composer test
 
       # run tests with phpunit or codecept
