@@ -87,7 +87,7 @@ class GoodTillSystemServiceProvider extends ServiceProvider
      */
     private function registerConsoleCommands()
     {
-        $this->commands(SetupCommand::class);
+        // $this->commands(SetupCommand::class);
         // $this->commands(xAPICommand::class);
         // $this->commands(LearningLockerCommand::class);
     }
