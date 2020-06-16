@@ -1,5 +1,5 @@
 {
-    "name": "flair/good-till-system",
+    "name": "flairuk/good-till-system",
     "description": "Good Till System API for Laravel",
     "keywords": [
         "flair",
@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": "^7.1",
-        "illuminate/support": "^6.9|^7.0"
+        "illuminate/framework": "^6.9|^7.0"
     },
     "require-dev": {
         "orchestra/testbench": "^4.0",
