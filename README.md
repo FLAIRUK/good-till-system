@@ -5,8 +5,7 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/flair/good-till-system.svg?style=flat-square)](https://scrutinizer-ci.com/g/flair/good-till-system)
 [![Total Downloads](https://img.shields.io/packagist/dt/flair/good-till-system.svg?style=flat-square)](https://packagist.org/packages/flair/good-till-system)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
-
+The Good Till System API Client for Laravel, further documenation can be found at the [Good Till System](https://apidoc.thegoodtill.com/) 
 ## Installation
 
 You can install the package via composer:
