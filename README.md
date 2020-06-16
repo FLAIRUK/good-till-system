@@ -1,4 +1,4 @@
-# The Good Till System || Laravel
+# The Good Till System for Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/flair/good-till-system.svg?style=flat-square)](https://packagist.org/packages/flair/good-till-system)
 [![Build Status](https://img.shields.io/travis/flair/good-till-system/master.svg?style=flat-square)](https://travis-ci.org/flair/good-till-system)
@@ -21,12 +21,6 @@ composer require flair/good-till-system
 use GoodTillSystem;
 
 GoodTillSystem::products()->get();
-```
-
-### Testing
-
-``` bash
-composer test
 ```
 
 ### Changelog
