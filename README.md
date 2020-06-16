@@ -1,4 +1,4 @@
-# Very short description of the package
+# The Good Till System || Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/flair/good-till-system.svg?style=flat-square)](https://packagist.org/packages/flair/good-till-system)
 [![Build Status](https://img.shields.io/travis/flair/good-till-system/master.svg?style=flat-square)](https://travis-ci.org/flair/good-till-system)
@@ -18,7 +18,9 @@ composer require flair/good-till-system
 ## Usage
 
 ``` php
-// Usage description here
+use GoodTillSystem;
+
+GoodTillSystem::products()->get();
 ```
 
 ### Testing
