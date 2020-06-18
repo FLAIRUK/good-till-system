@@ -45,10 +45,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "FLAIR\\GoodTillSystem\\GoodTillSystemServiceProvider"
+                "FLAIRUK\\GoodTillSystem\\GoodTillSystemServiceProvider"
             ],
             "aliases": {
-                "GoodTillSystem": "FLAIR\\GoodTillSystem\\GoodTillSystemFacade"
+                "GoodTillSystem": "FLAIRUK\\GoodTillSystem\\GoodTillSystemFacade"
             }
         }
     }
