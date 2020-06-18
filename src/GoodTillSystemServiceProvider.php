@@ -61,8 +61,6 @@ class GoodTillSystemServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
-        $this->app->register(GoodTillSystemServiceProvider::class);
         // Automatically apply the package configuration
         $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'good-till-system');
 
@@ -73,7 +71,6 @@ class GoodTillSystemServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
 
-            $this->registerPublishableResources();
             $this->registerConsoleCommands();
         }
     }
