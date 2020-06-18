@@ -1,9 +1,9 @@
 <?php
 
-namespace FLAIR\GoodTillSystem\Tests;
+namespace FLAIRUK\GoodTillSystem\Tests;
 
-use FLAIR\GoodTillSystem\Tests\TestCase;
-use FLAIR\GoodTillSystem\GoodTillSystemServiceProvider;
+use FLAIRUK\GoodTillSystem\Tests\TestCase;
+use FLAIRUK\GoodTillSystem\GoodTillSystemServiceProvider;
 
 class ExampleTest extends TestCase
 {

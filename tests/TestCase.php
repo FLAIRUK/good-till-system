@@ -1,9 +1,9 @@
 <?php
 
-namespace FLAIR\GoodTillSystem\Tests;
+namespace FLAIRUK\GoodTillSystem\Tests;
 
-use FLAIR\GoodTillSystem\GoodTillSystemFacade;
-use FLAIR\GoodTillSystem\GoodTillSystemServiceProvider;
+use FLAIRUK\GoodTillSystem\GoodTillSystemFacade;
+use FLAIRUK\GoodTillSystem\GoodTillSystemServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 class TestCase extends OrchestraTestCase
