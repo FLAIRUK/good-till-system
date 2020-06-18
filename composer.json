@@ -22,6 +22,7 @@
     },
     "require-dev": {
         "orchestra/testbench": "^4.0",
+        "phpunit/php-code-coverage": "^8.0",
         "phpunit/phpunit": "^9.2"
     },
     "autoload": {
