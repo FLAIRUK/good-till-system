@@ -1,6 +1,6 @@
 {
     "name": "flairuk/good-till-system",
-    "description": "Good Till System API for Laravel",
+    "description": "The Good Till API for Laravel",
     "keywords": [
         "flair",
         "laravel",
@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": "^7.1",
-        "illuminate/support": "^6.0"
+        "illuminate/support": "^6.0|^7.0"
     },
     "require-dev": {
         "orchestra/testbench": "^4.0",
