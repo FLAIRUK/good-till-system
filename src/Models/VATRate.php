@@ -5,32 +5,32 @@ namespace FLAIRUK\GoodTillSystem\Models;
 use FLAIRUK\GoodTillSystem\API;
 use Illuminate\Support\Facades\Config;
 
-class Outlet extends API {
+class VATRate extends API {
 
     /**
-     * Create a new Good Till Outlet instance.
+     * Create a new Good Till VATRate instance.
      *
      * @param array $user
      * @return void
      * 
-     * @source https://apidoc.thegoodtill.com/#api-Outlet
+     * @source https://apidoc.thegoodtill.com/#api-VatRate
      */
     public function __construct(array $user) {
         parent::__construct($user, $this->url);
     }
 
     /**
-     * Set Outlet URL
+     * Set VATRate URL
      * 
      * @param string|null $url
      * @return void
      */
     public function setURL($url = null): void {
-        $this->url = $url ? $url : Config::get('goodtill.routes.api') . 'outlets';
+        $this->url = $url ? $url : Config::get('goodtill.routes.api') . 'ajax/vat_rates';
     }
     
     /**
-     * Set Product Outlet ID
+     * Set VATRate Outlet ID
      * 
      * @param string $id
      * @return object

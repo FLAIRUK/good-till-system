@@ -1,6 +1,6 @@
 <?php
 
-namespace FLAIR\GoodTillSystem\Commands;
+namespace FLAIRUK\GoodTillSystem\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;

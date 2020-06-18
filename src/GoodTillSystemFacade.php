@@ -1,6 +1,6 @@
 <?php
 
-namespace FLAIR\GoodTillSystem;
+namespace FLAIRUK\GoodTillSystem;
 
 use Illuminate\Support\Facades\Facade;
 

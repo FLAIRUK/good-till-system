@@ -1,8 +1,8 @@
 <?php
 
-namespace FLAIR\GoodTillSystem\Models;
+namespace FLAIRUK\GoodTillSystem\Models;
 
-use FLAIR\GoodTillSystem\API;
+use FLAIRUK\GoodTillSystem\API;
 
 class Category extends API {
 

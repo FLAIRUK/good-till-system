@@ -1,10 +1,13 @@
 <?php
 
-namespace FLAIR\GoodTillSystem;
+namespace FLAIRUK\GoodTillSystem;
 
-interface RESTInterface {
-    public function get();
-    public function create(array $data);
-    public function update(array $data);
-    public function delete();
+use FLAIRUK\GoodTillSystem\Interfaces\GetInterface;
+use FLAIRUK\GoodTillSystem\Interfaces\CreateInterface;
+use FLAIRUK\GoodTillSystem\Interfaces\UpdateInterface;
+use FLAIRUK\GoodTillSystem\Interfaces\DeleteInterface;
+
+
+interface RESTInterface extends GetInterface, CreateInterface, UpdateInterface, DeleteInterface {
+    
 }

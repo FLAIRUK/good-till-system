@@ -6,7 +6,7 @@
         "laravel",
         "good-till-system"
     ],
-    "homepage": "https://github.com/flairuk/good-till-system",
+    "homepage": "https://github.com/flair/good-till-system",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -18,29 +18,29 @@
     ],
     "require": {
         "php": "^7.1",
-        "illuminate/support": "^7.0.0"
+        "illuminate/support": "^6.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^5.0",
-        "phpunit/phpunit": "^8.0"
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^9.2"
     },
     "autoload": {
         "psr-4": {
-            "FLAIR\\GoodTillSystem\\": "src"
+            "FLAIRUK\\GoodTillSystem\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "FLAIR\\GoodTillSystem\\Tests\\": "tests"
+            "FLAIRUK\\GoodTillSystem\\Tests\\": "tests"
         }
     },
     "scripts": {
-        "test": "./vendor/bin/phpunit",
+        "test": "vendor/bin/phpunit",
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
 
     },
     "config": {
-        "preferred-install": "dist"
+        "sort-packages": true
     },
     "extra": {
         "laravel": {

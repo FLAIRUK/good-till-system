@@ -1,9 +1,9 @@
 <?php
 
-namespace FLAIR\GoodTillSystem;
+namespace FLAIRUK\GoodTillSystem;
 
 use Illuminate\Support\ServiceProvider;
-use FLAIR\GoodTillSystem\Commands\SetupCommand;
+use FLAIRUK\GoodTillSystem\Commands\SetupCommand;
 
 class GoodTillSystemServiceProvider extends ServiceProvider
 {
@@ -87,7 +87,7 @@ class GoodTillSystemServiceProvider extends ServiceProvider
      */
     private function registerConsoleCommands()
     {
-        // $this->commands(SetupCommand::class);
+        $this->commands(SetupCommand::class);
         // $this->commands(xAPICommand::class);
         // $this->commands(LearningLockerCommand::class);
     }

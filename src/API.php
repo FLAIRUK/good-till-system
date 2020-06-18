@@ -1,15 +1,17 @@
 <?php
 
-namespace FLAIR\GoodTillSystem;
+namespace FLAIRUK\GoodTillSystem;
 
 use Illuminate\Support\Facades\Http;
+use FLAIRUK\GoodTillSystem\Authorize;
 use Illuminate\Support\Facades\Config;
-use FLAIR\GoodTillSystem\RESTInterface;
+use FLAIRUK\GoodTillSystem\RESTInterface;
 use Illuminate\Http\Client\PendingRequest;
 
 class API implements RESTInterface {
 
     protected $url;
+    protected $payload;
 
     /**
      * Create a new GoodTill instance.
@@ -18,8 +20,6 @@ class API implements RESTInterface {
      */
     public function __construct($user, $url, $id = null)
     {
-
-        $this->id = $id;
         $this->url = $url;
         $this->user = $user;
     }
@@ -39,8 +39,8 @@ class API implements RESTInterface {
      * @return array
      */
     public function get(): array {
-       
-        return $this->access()->get($this->url . $this->id ?? $this->id)->json();
+        // dump($this->url, $this->user['token']); die;
+        return $this->access()->get($this->url)->json();
     }
 
     /**
@@ -49,7 +49,7 @@ class API implements RESTInterface {
      * @param array $data
      * @return array
      */
-    public function create(array $data): array {
+    public function create(array $data = []): array {
         return $this->access()->post($this->url, $data)->json();
     }
 
@@ -60,7 +60,8 @@ class API implements RESTInterface {
      * @return array
      */
     public function update(array $data): array {
-        return $this->access()->patch($this->url . $this->id ?? $this->id, $data)->json();
+        // dump($this->url, $this->user['token']); die;
+        return $this->access()->patch($this->url, $data)->json();
     }
 
     /**
@@ -70,6 +71,6 @@ class API implements RESTInterface {
      * @return array
      */
     public function delete(): array {
-        return $this->access()->post($this->url . 'delete/' . $this->id, $data)->json();
+        return $this->access()->post($this->url . 'delete/' . $this->id)->json();
     }
 }

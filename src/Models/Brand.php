@@ -1,15 +1,42 @@
 <?php
 
-namespace FLAIR\GoodTillSystem\Models;
+namespace FLAIRUK\GoodTillSystem\Models;
 
-use FLAIR\GoodTillSystem\API;
+use FLAIRUK\GoodTillSystem\API;
+use Illuminate\Support\Facades\Config;
 
 class Brand extends API {
 
     /**
-     * The url attribute.
+     * Create a new Good Till Customer instance.
      *
-     * @var string
+     * @param array $user
+     * @return void
+     * 
+     * @source https://apidoc.thegoodtill.com/#api-Brand
      */
-    protected $url = 'https://api.thegoodtill.com/api/brands/';
+    public function __construct(array $user) {
+        parent::__construct($user, $this->url);
+    }
+
+    /**
+     * Set Outlet URL
+     * 
+     * @param string|null $url
+     * @return void
+     */
+    public function setURL($url = null): void {
+        $this->url = $url ? $url : Config::get('goodtill.routes.api') . 'outlets';
+    }
+    
+    /**
+     * Set Product Outlet ID
+     * 
+     * @param string $id
+     * @return object
+     */
+    public function setID(string $id): object {
+        $this->id = $id;
+        return $this;
+    }
 }
