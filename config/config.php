@@ -16,15 +16,22 @@ return [
     |-------------------------------------------------------------------------
     |
     | Specify Client Creadencials for The Good Till System
-    | Docs: https://apidoc.thegoodtill.com/#api-Authentication
+    | @source https://apidoc.thegoodtill.com/#api-Authentication
     |
     | Subdomain Example: customertest
-    | Key Example: customertest
-    | Secret Example: customertest
+    | Username Example: customertest
+    | Password Example: customertest
     |
     */
 
-    'subdomain' => env('GOOD_TILL_DOAMIN'),
-    'username' => env('GOOD_TILL_USERNAME'),
-    'password' => env('GOOD_TILL_PASSWORD')
+    'authorize' => [
+        'subdomain' => env('GOOD_TILL_DOAMIN'),
+        'username' => env('GOOD_TILL_USERNAME'),
+        'password' => env('GOOD_TILL_PASSWORD'),
+    ],
+    'routes' => [
+        'api' => 'https://api.thegoodtill.com/api/',
+        'loyalty_api' => 'https://loyaltyapi.thegoodtill.com/api/',
+        'web_order_api' => 'https://weborderapi.thegoodtill.com/api/'
+    ]
 ];
