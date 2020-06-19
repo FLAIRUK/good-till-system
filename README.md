@@ -1,5 +1,6 @@
 # The Good Till for Laravel
 
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/circleci/flairuk/good-till-system)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/flairuk/good-till-system.svg?style=flat-square)](https://packagist.org/packages/flairuk/good-till-system)
 [![Build Status](https://img.shields.io/travis/flairuk/good-till-system/master.svg?style=flat-square)](https://travis-ci.org/flairuk/good-till-system)
 [![Quality Score](https://img.shields.io/scrutinizer/g/flairuk/good-till-system.svg?style=flat-square)](https://scrutinizer-ci.com/g/flairuk/good-till-system)
