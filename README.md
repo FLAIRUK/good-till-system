@@ -10,7 +10,7 @@
 This package is still a work in progress, extended documentation will follow.
 
 ## Test Accounts
-If you are building an integration and you would like to test the API without affecting your live account, or you are building an integration on behalf of a Goodtill customer, you request a fully-featured test account from dev@thegoodtill.com. 
+If you are building an integration and you would like to test the API without affecting your live account, or you are building an integration on behalf of a Goodtill customer, you request a fully-featured test account from dev@thegoodtill.com. Please visit the Good Till [API Documentation](https://support.thegoodtill.com/support/api/) for more information. 
 
 ## Installation
 
