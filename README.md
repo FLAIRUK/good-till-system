@@ -1,9 +1,9 @@
 # The Good Till for Laravel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/flair/good-till-system.svg?style=flat-square)](https://packagist.org/packages/flair/good-till-system)
-[![Build Status](https://img.shields.io/travis/flair/good-till-system/master.svg?style=flat-square)](https://travis-ci.org/flair/good-till-system)
-[![Quality Score](https://img.shields.io/scrutinizer/g/flair/good-till-system.svg?style=flat-square)](https://scrutinizer-ci.com/g/flair/good-till-system)
-[![Total Downloads](https://img.shields.io/packagist/dt/flair/good-till-system.svg?style=flat-square)](https://packagist.org/packages/flair/good-till-system)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/flairuk/good-till-system.svg?style=flat-square)](https://packagist.org/packages/flairuk/good-till-system)
+[![Build Status](https://img.shields.io/travis/flairuk/good-till-system/master.svg?style=flat-square)](https://travis-ci.org/flairuk/good-till-system)
+[![Quality Score](https://img.shields.io/scrutinizer/g/flairuk/good-till-system.svg?style=flat-square)](https://scrutinizer-ci.com/g/flairuk/good-till-system)
+[![Total Downloads](https://img.shields.io/packagist/dt/flairuk/good-till-system.svg?style=flat-square)](https://packagist.org/packages/flairuk/good-till-system)
 
 
 This package is still a work in progress, extended documentation will follow.
