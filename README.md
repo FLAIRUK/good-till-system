@@ -5,7 +5,11 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/flair/good-till-system.svg?style=flat-square)](https://scrutinizer-ci.com/g/flair/good-till-system)
 [![Total Downloads](https://img.shields.io/packagist/dt/flair/good-till-system.svg?style=flat-square)](https://packagist.org/packages/flair/good-till-system)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+
+This package is still a work in progress, extended documentation will follow.
+
+## Test Accounts
+If you are building an integration and you would like to test the API without affecting your live account, or you are building an integration on behalf of a Goodtill customer, you request a fully-featured test account from dev@thegoodtill.com. 
 
 ## Installation
 
@@ -64,8 +68,6 @@ GoodTillSystem::product($id)->update($data);
 ```php
 GoodTillSystem::product($id)->delete();
 ```
-
-This package is still a work in progress, extended documentation will follow.
 
 ### Changelog
 
