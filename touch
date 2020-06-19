@@ -1,1 +1,0 @@
-zend_extension=xdebug.so /etc/phpX.Y-sp/conf.d/xdebug.ini
