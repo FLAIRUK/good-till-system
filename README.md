@@ -4,8 +4,7 @@
 [![Build Status](https://img.shields.io/travis/flairuk/good-till-system/master.svg?style=flat-square)](https://travis-ci.org/flairuk/good-till-system)
 [![Quality Score](https://img.shields.io/scrutinizer/g/flairuk/good-till-system.svg?style=flat-square)](https://scrutinizer-ci.com/g/flairuk/good-till-system)
 [![Total Downloads](https://img.shields.io/packagist/dt/flairuk/good-till-system.svg?style=flat-square)](https://packagist.org/packages/flairuk/good-till-system)
-[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/circleci/flairuk/good-till-system)
-
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg&plastic&logo=appveyo)](https://circleci.com/gh/circleci/flairuk/good-till-system)
 
 This package is still a work in progress, extended documentation will follow.
 
