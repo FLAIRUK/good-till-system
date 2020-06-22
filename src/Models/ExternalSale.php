@@ -37,9 +37,9 @@ class ExternalSale extends API {
      * @return Product
      */
     public function products(): Product {
-        $sale = new Product($this->user);
-        $sale->setURL($this->url . self::PRODUCTS . '/');
-        return $sale;
+        $product = new Product($this->user);
+        $product->setURL($this->url . self::PRODUCTS);
+        return $product;
     }
 
     public function sale($id = null): Sale {

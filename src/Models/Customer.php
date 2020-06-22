@@ -33,12 +33,12 @@ class Customer extends API {
      * @return void
      */
     public function setURL($id = null): void { 
-
-        if (!is_null($id)) {
-            $this->url = Config::get('goodtill.routes.api') . 'customers/' . $this->id ?? $this->id;
-        } else {
-            $this->url = $url;
-        }
+        $this->url = Config::get('goodtill.routes.api') . 'customers/' . $id ?? $id;
+        // if (!is_null($id)) {
+        //     $this->url = Config::get('goodtill.routes.api') . 'customers/' . $this->id ?? $this->id;
+        // } else {
+        //     $this->url = $url;
+        // }
     }
     /**
      * Set Product Outlet ID

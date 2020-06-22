@@ -62,13 +62,10 @@ class Product extends API {
         parent::__construct($user, $this->url);
     }
 
-    public function setURL($id = null): void { 
-        if (!is_null($id)) {
-            $this->url = Config::get('goodtill.routes.api') . self::PRODUCTS . '/' . $this->id ?? $this->id;
-        } else {
-            $this->url = $url;
-        }
+    public function setURL($url = null): void {
+        $this->url = $url ? $url : Config::get('goodtill.routes.api') . self::PRODUCTS;
     }
+
     
     /**
      * Product Set Outlet ID
