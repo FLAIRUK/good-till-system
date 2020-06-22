@@ -1,30 +1,73 @@
-# Very short description of the package
+# The Good Till for Laravel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/flair/good-till-system.svg?style=flat-square)](https://packagist.org/packages/flair/good-till-system)
-[![Build Status](https://img.shields.io/travis/flair/good-till-system/master.svg?style=flat-square)](https://travis-ci.org/flair/good-till-system)
-[![Quality Score](https://img.shields.io/scrutinizer/g/flair/good-till-system.svg?style=flat-square)](https://scrutinizer-ci.com/g/flair/good-till-system)
-[![Total Downloads](https://img.shields.io/packagist/dt/flair/good-till-system.svg?style=flat-square)](https://packagist.org/packages/flair/good-till-system)
+[![Author](http://img.shields.io/badge/author-@ijeffro-blue.svg?style=flat-square)](https://github.com/ijeffro)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/flairuk/good-till-system.svg?style=flat-square)](https://packagist.org/packages/flairuk/good-till-system)
+[![Build Status](https://img.shields.io/travis/flairuk/good-till-system/master.svg?style=flat-square)](https://travis-ci.org/flairuk/good-till-system)
+[![Quality Score](https://img.shields.io/scrutinizer/g/flairuk/good-till-system.svg?style=flat-square)](https://scrutinizer-ci.com/g/flairuk/good-till-system)
+[![Total Downloads](https://img.shields.io/packagist/dt/flairuk/good-till-system.svg?style=flat-square)](https://packagist.org/packages/flairuk/good-till-system)
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg&plastic&logo=appveyo)](https://circleci.com/gh/FLAIRUK/good-till-system)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This package is still a work in progress, extended documentation will follow.
+
+## Test Accounts
+If you are building an integration and you would like to test the API without affecting your live account, or you are building an integration on behalf of a Goodtill customer, you request a fully-featured test account from dev@thegoodtill.com. Please visit the Good Till [API Documentation](https://support.thegoodtill.com/support/api/) for more information. 
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require flair/good-till-system
+composer require flairuk/good-till-system
 ```
 
-## Usage
+## Basic Usage
+Add the environment variables to your .env file and enter the api credentials.
+```php
+GOOD_TILL_DOAMIN=
+GOOD_TILL_USERNAME=
+GOOD_TILL_PASSWORD=
+```
+Use the GoodTillSystem Facade.
 
 ``` php
-// Usage description here
+use GoodTillSystem;
+```
+Once you add the facade, you can now interact with the Good Till System API.
+
+
+## Good Till System API
+
+### Products
+
+1. Get a list of products.
+
+```php
+GoodTillSystem::products()->get();
 ```
 
-### Testing
+2. Get a product by id.
 
-``` bash
-composer test
+```php
+GoodTillSystem::product($id)->get();
+```
+
+3. Create a new product.
+
+```php
+GoodTillSystem::product()->create($data);
+```
+
+4. Update a product by id.
+
+```php
+
+GoodTillSystem::product($id)->update($data);
+```
+
+5. Delete a product by id.
+
+```php
+GoodTillSystem::product($id)->delete();
 ```
 
 ### Changelog
@@ -47,7 +90,3 @@ If you discover any security related issues, please email ijeffrouk@gmail.com in
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
