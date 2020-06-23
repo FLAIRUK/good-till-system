@@ -84,7 +84,8 @@ If you discover any security related issues, please email ijeffrouk@gmail.com in
 
 ## Credits
 
-- [Phil Graham](https://github.com/flair)
+- [Phil Graham](https://github.com/ijeffro)
+- [FLAIR](https://github.com/flairuk)
 - [All Contributors](../../contributors)
 
 ## License
