@@ -11,7 +11,7 @@
   <a href="https://github.com/FLAIRUK/good-till-system/actions/workflows/tests.yml" target="_blank"><img src="https://img.shields.io/badge/Lint-%E2%9C%93-2EA043?style=flat&logo=githubactions&logoColor=white" alt="Lint"></a>&nbsp;
   <a href="https://github.com/FLAIRUK/good-till-system/actions/workflows/tests.yml" target="_blank"><img src="https://img.shields.io/badge/Tests-%E2%9C%93-2EA043?style=flat&logo=githubactions&logoColor=white" alt="Tests"></a>&nbsp;
   <a href="https://packagist.org/packages/flairuk/good-till-system" target="_blank"><img src="https://img.shields.io/packagist/dt/flairuk/good-till-system?style=flat&logo=packagist&logoColor=white&label=Downloads&color=F28D1A" alt="Downloads on Packagist"></a>&nbsp;
-  <a href="https://github.com/FLAIRUK/good-till-system/blob/master/LICENSE.md" target="_blank"><img src="https://img.shields.io/github/license/FLAIRUK/good-till-system?style=flat&label=License&color=3DA639" alt="MIT licence"></a>&nbsp;
+  <a href="https://github.com/FLAIRUK/good-till-system/blob/main/LICENSE.md" target="_blank"><img src="https://img.shields.io/github/license/FLAIRUK/good-till-system?style=flat&label=License&color=3DA639" alt="MIT licence"></a>&nbsp;
   <a href="https://apidoc.thegoodtill.com" target="_blank"><img src="https://img.shields.io/badge/Client-Goodtill%20API-BE123C?style=flat" alt="Goodtill API"></a>&nbsp;
   <br>&nbsp;
 </h2>
