@@ -2,6 +2,12 @@
 
 All notable changes to `good-till-system` will be documented in this file.
 
+## 1.0.1 - 2026-10-05
+
+- `goodtill:status` reports an unreachable host instead of failing with an uncaught `ConnectionException`.
+- An empty `GOOD_TILL_SUBDOMAIN`, as `goodtill:install` writes it, now falls back to the 0.x `GOOD_TILL_DOAMIN`.
+- README: the retry, token refresh, error and return-value descriptions now match the code exactly.
+
 ## 1.0.0 - 2026-10-05
 
 Complete rewrite for Laravel 12 and 13 (PHP 8.2+). See the upgrade guide in the README.

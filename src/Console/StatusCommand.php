@@ -5,6 +5,7 @@ namespace FLAIRUK\GoodTillSystem\Console;
 use FLAIRUK\GoodTillSystem\Exceptions\GoodTillException;
 use FLAIRUK\GoodTillSystem\GoodTill;
 use Illuminate\Console\Command;
+use Illuminate\Http\Client\ConnectionException;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'goodtill:status')]
@@ -25,6 +26,10 @@ class StatusCommand extends Command
             $outlets = $goodTill->outlets()->all();
         } catch (GoodTillException $e) {
             $this->components->error($e->getMessage());
+
+            return self::FAILURE;
+        } catch (ConnectionException $e) {
+            $this->components->error('Could not reach Goodtill: '.$e->getMessage());
 
             return self::FAILURE;
         }

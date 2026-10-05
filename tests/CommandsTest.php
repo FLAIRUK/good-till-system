@@ -2,6 +2,7 @@
 
 namespace FLAIRUK\GoodTillSystem\Tests;
 
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use PHPUnit\Framework\Attributes\Test;
@@ -51,6 +52,16 @@ class CommandsTest extends TestCase
     }
 
     #[Test]
+    public function status_reports_an_unreachable_host(): void
+    {
+        Http::fake(fn () => throw new ConnectionException('Connection timed out'));
+
+        $this->artisan('goodtill:status')
+            ->expectsOutputToContain('Could not reach Goodtill')
+            ->assertFailed();
+    }
+
+    #[Test]
     public function the_legacy_env_variable_name_is_still_read(): void
     {
         $config = require __DIR__.'/../config/goodtill.php';
@@ -60,6 +71,20 @@ class CommandsTest extends TestCase
         try {
             $this->assertSame('legacy', (require __DIR__.'/../config/goodtill.php')['subdomain']);
         } finally {
+            putenv('GOOD_TILL_DOAMIN');
+        }
+    }
+
+    #[Test]
+    public function an_empty_subdomain_falls_back_to_the_legacy_name(): void
+    {
+        // goodtill:install writes an empty GOOD_TILL_SUBDOMAIN, which must not hide the old variable.
+        putenv('GOOD_TILL_SUBDOMAIN=');
+        putenv('GOOD_TILL_DOAMIN=legacy');
+        try {
+            $this->assertSame('legacy', (require __DIR__.'/../config/goodtill.php')['subdomain']);
+        } finally {
+            putenv('GOOD_TILL_SUBDOMAIN');
             putenv('GOOD_TILL_DOAMIN');
         }
     }

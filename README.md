@@ -18,10 +18,10 @@
 
 **Goodtill for Laravel** — A Laravel 12 and 13 client for the [Goodtill EPOS API](https://apidoc.thegoodtill.com).
 
-- **Automatic authentication.** It logs in once and caches the JWT. It refreshes the token before the 12-hour expiry and logs in again if Goodtill revokes it.
+- **Automatic authentication.** It logs in once and caches the JWT. The first request after the token is 11 hours old refreshes it, ahead of Goodtill's 12-hour expiry, and a revoked token (a 401) triggers a fresh login.
 - **Resource classes.** Products, customers, sales, reports, external (web) orders, stock and more, with the endpoint quirks handled for you.
-- **Real errors.** Failures throw `GoodTillException`, including the `200 {"status": false}` responses Goodtill sometimes returns.
-- **Safe retries.** Reads are retried on connection errors and 5xx responses. Writes are never retried automatically, so a sale is never recorded twice.
+- **Real errors.** Error responses throw `GoodTillException`, including the `200 {"status": false}` responses Goodtill sometimes returns. If Goodtill can't be reached, Laravel's `ConnectionException` is thrown.
+- **Safe retries.** GET requests are retried once on a connection error or a 5xx response. Writes are not retried on those errors, so a sale is never recorded twice; the only resend is after a 401, which Goodtill rejected unprocessed.
 - **Multi-outlet.** Use `GoodTill::forOutlet($id)` to work with any outlet.
 
 <p align="center">
@@ -69,7 +69,7 @@ use FLAIRUK\GoodTillSystem\Facades\GoodTill;
 
 You can also type-hint `FLAIRUK\GoodTillSystem\GoodTill` to have it injected.
 
-Each method returns the `data` from Goodtill's response as an array (`delete()` returns `true`).
+Each method returns the `data` from Goodtill's response, or the whole body when there is no `data` key. `delete()` returns `true`.
 
 ### Products
 
@@ -192,6 +192,8 @@ try {
 } catch (GoodTillException $e) {
     $e->getMessage();          // includes Goodtill's message, e.g. "The selected payments.1.method is invalid."
     $e->response?->json();     // the full response
+} catch (\Illuminate\Http\Client\ConnectionException $e) {
+    // Goodtill could not be reached (DNS, timeout); a GET has already been retried once
 }
 ```
 

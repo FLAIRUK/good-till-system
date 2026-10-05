@@ -15,7 +15,9 @@ return [
     |
     */
 
-    'subdomain' => env('GOOD_TILL_SUBDOMAIN', env('GOOD_TILL_DOAMIN')),
+    // GOOD_TILL_DOAMIN is the 0.x name. goodtill:install writes an empty
+    // GOOD_TILL_SUBDOMAIN, so an empty value falls back to it too.
+    'subdomain' => env('GOOD_TILL_SUBDOMAIN') ?: env('GOOD_TILL_DOAMIN'),
 
     'username' => env('GOOD_TILL_USERNAME'),
 
