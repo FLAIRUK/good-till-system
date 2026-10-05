@@ -8,7 +8,8 @@
 <h2 align="center">
   <a href="https://www.php.net/" target="_blank"><img src="https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=flat&logo=php&logoColor=white" alt="PHP 8.2+"></a>&nbsp;
   <a href="https://laravel.com/docs/" target="_blank"><img src="https://img.shields.io/badge/Laravel-12%20%7C%2013-FF2D20?style=flat&logo=laravel&logoColor=white" alt="Laravel 12 or 13"></a>&nbsp;
-  <a href="https://github.com/FLAIRUK/good-till-system/actions/workflows/tests.yml" target="_blank"><img src="https://img.shields.io/github/actions/workflow/status/FLAIRUK/good-till-system/tests.yml?branch=master&style=flat&logo=githubactions&logoColor=white&label=Tests" alt="Tests"></a>&nbsp;
+  <a href="https://github.com/FLAIRUK/good-till-system/actions/workflows/tests.yml" target="_blank"><img src="https://img.shields.io/badge/Lint-%E2%9C%93-2EA043?style=flat&logo=githubactions&logoColor=white" alt="Lint"></a>&nbsp;
+  <a href="https://github.com/FLAIRUK/good-till-system/actions/workflows/tests.yml" target="_blank"><img src="https://img.shields.io/badge/Tests-%E2%9C%93-2EA043?style=flat&logo=githubactions&logoColor=white" alt="Tests"></a>&nbsp;
   <a href="https://packagist.org/packages/flairuk/good-till-system" target="_blank"><img src="https://img.shields.io/packagist/dt/flairuk/good-till-system?style=flat&logo=packagist&logoColor=white&label=Downloads&color=F28D1A" alt="Downloads on Packagist"></a>&nbsp;
   <a href="https://github.com/FLAIRUK/good-till-system/blob/master/LICENSE.md" target="_blank"><img src="https://img.shields.io/github/license/FLAIRUK/good-till-system?style=flat&label=License&color=3DA639" alt="MIT licence"></a>&nbsp;
   <a href="https://apidoc.thegoodtill.com" target="_blank"><img src="https://img.shields.io/badge/Client-Goodtill%20API-BE123C?style=flat" alt="Goodtill API"></a>&nbsp;
@@ -39,7 +40,7 @@ composer require flairuk/good-till-system
 php artisan goodtill:install
 ```
 
-`goodtill:install` publishes `config/goodtill.php` and adds these keys to `.env` and `.env.example`:
+`goodtill:install` publishes `config/goodtill.php` and adds any of these keys that are missing to `.env` and `.env.example`, empty. Fill them in:
 
 ```dotenv
 GOOD_TILL_SUBDOMAIN=yourstore
@@ -68,7 +69,7 @@ use FLAIRUK\GoodTillSystem\Facades\GoodTill;
 
 You can also type-hint `FLAIRUK\GoodTillSystem\GoodTill` to have it injected.
 
-Each method returns the `data` from Goodtill's response as an array.
+Each method returns the `data` from Goodtill's response as an array (`delete()` returns `true`).
 
 ### Products
 
@@ -224,7 +225,7 @@ Version 1 is a rewrite. The previous version could not make most API calls (it l
 | --- | --- |
 | `GoodTillSystem::products()->get()` | `GoodTill::products()->all()` |
 | `GoodTillSystem::product($id)->get()` | `GoodTill::products()->find($id)` |
-| `GoodTillSystem::product()->create($data)` | `GoodTill::products()->create($data)` |
+| `GoodTillSystem::products()->create($data)` | `GoodTill::products()->create($data)` |
 | `GoodTillSystem::product($id)->update($data)` | `GoodTill::products()->update($id, $data)` |
 | `GoodTillSystem::product($id)->delete()` | `GoodTill::products()->delete($id)` |
 | Facade alias `GoodTillSystem` | `GoodTill` (`FLAIRUK\GoodTillSystem\Facades\GoodTill`) |
