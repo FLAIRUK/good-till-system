@@ -2,37 +2,43 @@
 
 namespace FLAIRUK\GoodTillSystem\Tests;
 
-use FLAIRUK\GoodTillSystem\GoodTillSystemFacade;
-use FLAIRUK\GoodTillSystem\GoodTillSystemServiceProvider;
-use Orchestra\Testbench\TestCase as OrchestraTestCase;
+use FLAIRUK\GoodTillSystem\Facades\GoodTill;
+use FLAIRUK\GoodTillSystem\GoodTillServiceProvider;
+use Illuminate\Support\Facades\Http;
+use Orchestra\Testbench\TestCase as Orchestra;
 
-class TestCase extends OrchestraTestCase
+abstract class TestCase extends Orchestra
 {
-    public function setUp(): void
+    protected const BASE = 'https://api.thegoodtill.com/api';
+
+    protected function getPackageProviders($app): array
     {
-      parent::setUp();
+        return [GoodTillServiceProvider::class];
     }
-    
-    /**
-     * Load package service provider
-     * @param  \Illuminate\Foundation\Application $app
-     * @return GoodTillSystemServiceProvider
-     */
-    protected function getPackageProviders($app)
+
+    protected function getPackageAliases($app): array
     {
-        return [
-            GoodTillSystemServiceProvider::class
-        ];
+        return ['GoodTill' => GoodTill::class];
     }
-    /**
-     * Load package alias
-     * @param  \Illuminate\Foundation\Application $app
-     * @return array
-     */
-    protected function getPackageAliases($app)
+
+    protected function defineEnvironment($app): void
     {
-        return [
-            'GoodTillSystem' => GoodTillSystemFacade::class,
-        ];
+        $app['config']->set('cache.default', 'array');
+        $app['config']->set('goodtill.subdomain', 'teststore');
+        $app['config']->set('goodtill.username', 'api-user');
+        $app['config']->set('goodtill.password', 'secret');
+        $app['config']->set('goodtill.retry', [1, 0]);
+    }
+
+    /**
+     * Fake a successful login plus the given endpoint responses.
+     */
+    protected function fakeApi(array $responses = [], string $token = 'token-1'): void
+    {
+        Http::preventStrayRequests();
+
+        Http::fake($responses + [
+            self::BASE.'/login' => Http::response(['token' => $token, 'user_level' => 'store_owner']),
+        ]);
     }
 }

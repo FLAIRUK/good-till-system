@@ -1,55 +1,56 @@
 {
     "name": "flairuk/good-till-system",
-    "description": "The Good Till API for Laravel",
-    "keywords": [
-        "flair",
-        "laravel",
-        "good-till-system"
-    ],
-    "homepage": "https://github.com/flairuk/good-till-system",
+    "description": "A Laravel client for the Goodtill EPOS API, with automatic token management.",
+    "keywords": ["laravel", "goodtill", "good-till", "epos", "pos", "api-client"],
+    "homepage": "https://github.com/FLAIRUK/good-till-system",
     "license": "MIT",
     "type": "library",
     "authors": [
         {
             "name": "Phil Graham",
-            "email": "ijeffrouk@gmail.com",
+            "homepage": "https://github.com/ijeffro",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.1",
-        "illuminate/support": "^6.0|^7.0"
+        "php": "^8.2",
+        "illuminate/cache": "^12.0|^13.0",
+        "illuminate/console": "^12.0|^13.0",
+        "illuminate/http": "^12.0|^13.0",
+        "illuminate/support": "^12.0|^13.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^4.0",
-        "phpunit/phpunit": "^8.0"
+        "laravel/pint": "^1.18",
+        "orchestra/testbench": "^10.0|^11.0",
+        "phpunit/phpunit": "^11.5|^12.0|^13.0"
     },
     "autoload": {
         "psr-4": {
-            "FLAIRUK\\GoodTillSystem\\": "src"
+            "FLAIRUK\\GoodTillSystem\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "FLAIRUK\\GoodTillSystem\\Tests\\": "tests"
+            "FLAIRUK\\GoodTillSystem\\Tests\\": "tests/"
         }
     },
     "scripts": {
-        "test": "./vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-
-    },
-    "config": {
-        "sort-packages": true
+        "test": "phpunit",
+        "format": "pint"
     },
     "extra": {
         "laravel": {
             "providers": [
-                "FLAIRUK\\GoodTillSystem\\GoodTillSystemServiceProvider"
+                "FLAIRUK\\GoodTillSystem\\GoodTillServiceProvider"
             ],
             "aliases": {
-                "GoodTillSystem": "FLAIRUK\\GoodTillSystem\\GoodTillSystemFacade"
+                "GoodTill": "FLAIRUK\\GoodTillSystem\\Facades\\GoodTill"
             }
         }
-    }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
