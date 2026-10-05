@@ -5,11 +5,17 @@
   </picture>
 </p>
 
-[![Tests](https://github.com/FLAIRUK/good-till-system/actions/workflows/tests.yml/badge.svg)](https://github.com/FLAIRUK/good-till-system/actions/workflows/tests.yml)
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/flairuk/good-till-system.svg?style=flat-square)](https://packagist.org/packages/flairuk/good-till-system)
-[![License](https://img.shields.io/packagist/l/flairuk/good-till-system.svg?style=flat-square)](LICENSE.md)
+<h2 align="center">
+  <a href="https://www.php.net/" target="_blank"><img src="https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=flat&logo=php&logoColor=white" alt="PHP 8.2+"></a>&nbsp;
+  <a href="https://laravel.com/docs/" target="_blank"><img src="https://img.shields.io/badge/Laravel-12%20%7C%2013-FF2D20?style=flat&logo=laravel&logoColor=white" alt="Laravel 12 or 13"></a>&nbsp;
+  <a href="https://github.com/FLAIRUK/good-till-system/actions/workflows/tests.yml" target="_blank"><img src="https://img.shields.io/github/actions/workflow/status/FLAIRUK/good-till-system/tests.yml?branch=master&style=flat&logo=githubactions&logoColor=white&label=Tests" alt="Tests"></a>&nbsp;
+  <a href="https://packagist.org/packages/flairuk/good-till-system" target="_blank"><img src="https://img.shields.io/packagist/dt/flairuk/good-till-system?style=flat&logo=packagist&logoColor=white&label=Downloads&color=F28D1A" alt="Downloads on Packagist"></a>&nbsp;
+  <a href="https://github.com/FLAIRUK/good-till-system/blob/master/LICENSE.md" target="_blank"><img src="https://img.shields.io/github/license/FLAIRUK/good-till-system?style=flat&label=License&color=3DA639" alt="MIT licence"></a>&nbsp;
+  <a href="https://apidoc.thegoodtill.com" target="_blank"><img src="https://img.shields.io/badge/Client-Goodtill%20API-BE123C?style=flat" alt="Goodtill API"></a>&nbsp;
+  <br>&nbsp;
+</h2>
 
-A Laravel 12 and 13 client for the [Goodtill EPOS API](https://apidoc.thegoodtill.com).
+**Goodtill for Laravel** — A Laravel 12 and 13 client for the [Goodtill EPOS API](https://apidoc.thegoodtill.com).
 
 - **Automatic authentication.** It logs in once and caches the JWT. It refreshes the token before the 12-hour expiry and logs in again if Goodtill revokes it.
 - **Resource classes.** Products, customers, sales, reports, external (web) orders, stock and more, with the endpoint quirks handled for you.
@@ -17,7 +23,16 @@ A Laravel 12 and 13 client for the [Goodtill EPOS API](https://apidoc.thegoodtil
 - **Safe retries.** Reads are retried on connection errors and 5xx responses. Writes are never retried automatically, so a sale is never recorded twice.
 - **Multi-outlet.** Use `GoodTill::forOutlet($id)` to work with any outlet.
 
-## Installation
+<p align="center">
+  📦&nbsp;<a href="#-installation">Installation</a> ·
+  🚀&nbsp;<a href="#-usage">Usage</a> ·
+  🔌&nbsp;<a href="#-testing-your-integration">Testing your integration</a> ·
+  🔄&nbsp;<a href="#-upgrading-from-dev-master">Upgrading</a>
+</p>
+
+<br><br>
+
+## 📦 Installation
 
 ```bash
 composer require flairuk/good-till-system
@@ -43,7 +58,9 @@ php artisan goodtill:status
 
 If you run several servers or queue workers, set `GOOD_TILL_CACHE_STORE` to a shared cache such as `redis` or `database` so they all share one token.
 
-## Usage
+<br><br>
+
+## 🚀 Usage
 
 ```php
 use FLAIRUK\GoodTillSystem\Facades\GoodTill;
@@ -184,7 +201,9 @@ GoodTill::tokens()->logout();   // invalidate the token with Goodtill, e.g. when
 GoodTill::tokens()->forget();   // drop the cached token locally
 ```
 
-## Testing your integration
+<br><br>
+
+## 🔌 Testing your integration
 
 The client uses Laravel's HTTP client, so `Http::fake()` works in your own tests:
 
@@ -195,7 +214,9 @@ Http::fake([
 ]);
 ```
 
-## Upgrading from 0.x
+<br><br>
+
+## 🔄 Upgrading from dev-master
 
 Version 1 is a rewrite. The previous version could not make most API calls (it logged in on every request and several classes were missing), so the API has changed:
 
@@ -211,22 +232,30 @@ Version 1 is a rewrite. The previous version could not make most API calls (it l
 | `GOOD_TILL_DOAMIN` | `GOOD_TILL_SUBDOMAIN` (the old name is still read as a fallback) |
 | `goodtill:setup` | `goodtill:install`, `goodtill:status` |
 
-## Testing
+<br><br>
+
+## 🧪 Testing
 
 ```bash
 composer test
 ```
 
-## Security
+<br><br>
+
+## 🔒 Security
 
 If you discover a security issue, please email ijeffrouk@gmail.com instead of using the issue tracker.
 
-## Credits
+<br><br>
+
+## 🙌 Credits
 
 - [Phil Graham](https://github.com/ijeffro)
 - [FLAIR](https://github.com/flairuk)
 - [All Contributors](../../contributors)
 
-## License
+<br><br>
+
+## 📄 License
 
 MIT. See [LICENSE](LICENSE.md).
