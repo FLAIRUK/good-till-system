@@ -1,4 +1,9 @@
-# Goodtill for Laravel
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="art/logo-dark.svg">
+    <img src="art/logo-light.svg" alt="Goodtill for Laravel" width="420">
+  </picture>
+</p>
 
 [![Tests](https://github.com/FLAIRUK/good-till-system/actions/workflows/tests.yml/badge.svg)](https://github.com/FLAIRUK/good-till-system/actions/workflows/tests.yml)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/flairuk/good-till-system.svg?style=flat-square)](https://packagist.org/packages/flairuk/good-till-system)

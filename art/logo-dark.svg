@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="160" viewBox="0 0 520 160" role="img" aria-label="Goodtill for Laravel">
+  <title>Goodtill for Laravel</title>
+  <defs>
+    <linearGradient id="good-till-system-tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FB7185"/>
+      <stop offset="1" stop-color="#BE123C"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(16 16)" color="#BE123C">
+    <rect width="128" height="128" rx="32" fill="url(#good-till-system-tile)"/>
+    <path d="M36 20H92V106L82.7 100L73.3 106L64 100L54.7 106L45.3 100L36 106Z" fill="#fff"/>
+    <g fill="currentColor"><rect x="46" y="34" width="36" height="6" rx="3"/><rect x="46" y="48" width="24" height="6" rx="3"/><rect x="46" y="62" width="30" height="6" rx="3"/><rect x="46" y="80" width="14" height="6" rx="3"/><rect x="66" y="80" width="16" height="6" rx="3"/></g>
+  </g>
+  <text x="172" y="66" fill="#9198A1" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="17" font-weight="600" letter-spacing="4">LARAVEL</text>
+  <text x="169" y="118" fill="#F0F6FC" font-family="Inter, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="56" font-weight="800" letter-spacing="-1.5">Goodtill</text>
+</svg>
