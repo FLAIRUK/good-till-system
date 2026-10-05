@@ -40,6 +40,8 @@ composer require flairuk/good-till-system
 php artisan goodtill:install
 ```
 
+Requires PHP 8.2 or later with Laravel 12, or PHP 8.3 or later with Laravel 13.
+
 `goodtill:install` publishes `config/goodtill.php` and adds any of these keys that are missing to `.env` and `.env.example`, empty. Fill them in:
 
 ```dotenv
